@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.min.css">
+    <title>Exercise 22: Rock, Paper, Scissors Gamepad</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+    .container, .history{
+        padding-top: 50px;
+        text-align: center;
+        
+    }
+    .computer, .player, .start{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    body{
+        background-color: black;
+        font-size: 40px;
+        color: yellow;
+        font-family: 'Oswald', sans-serif;
+
+    }
+    h1{
+        font-weight: 700;
+    }
+    .hidden{
+        display: none;
+    }
+    .show{
+        display: block;
+    }
+    li{
+        font-size: 20px;
+    }
+    #record{
+        height: 400px;
+        overflow-y: scroll;
+    }
+    .versus{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .btn{
+        background-color: red;
+        color:azure;
+    }
+    .btn:hover{
+        background-color:forestgreen;
+    }
+    .btn.disabled{
+        background-color: red;
+        color: white;
+    }
+    img{
+        width: 100%;
+    }
+    *::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: red;
+    }
+    *::-webkit-scrollbar-thumb {
+        background-color: forestgreen;
+    }
+    
+
+</style>
+<body>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8"><div class="container text-center">
+                <h1>PICK YOUR WEAPON</h1>
+                <hr>
+            <div class="text-center">
+                <button class="btn" id="rock" onclick="game.rockFunction()">Rock</button>
+                <button class="btn" id="paper" onclick="game.paperFunction()">Paper</button>
+                <button class="btn" id="scissors" onclick="game.scissorFunction()">Scissors</button>
+            </div>
+            </div>
+            <div class="versus">
+                <div class="container text-center player">
+                    <img class="" id="player-gif" src="images/4.gif" alt="">
+                    <img class="hidden" id="player-One" src="images/1.png" alt="">
+                    <img class="hidden" id="player-Two" src="images/2.png" alt="">
+                    <img class="hidden" id="player-Three" src="images/3.png" alt="">
+                </div>
+
+                <div style="width:120px"class="text-center">
+                    <h1 style="font-size:50px">VS</h1>
+                </div>
+    
+                <div class="container text-center computer">
+                    <img class="" id="gif" src="images/4.gif" alt="">
+                    <img class="hidden" id="game-One" src="images/1.png" alt="">
+                    <img class="hidden" id="game-Two" src="images/2.png" alt="">
+                    <img class="hidden" id="game-Three" src="images/3.png" alt="">
+                </div>
+            </div>
+            <div style="padding-top: 20px;" class="text-center">
+                <button style="width:100px" class="btn" onclick="game.rematchFunction()">Rematch</button>
+            </div>
+
+            </div>
+
+            <div class="col-md-4 history">
+                <h1>MATCH HISTORY</h1>
+                <hr>
+                <div id="record">
+                    <ol id="match-score">
+                    </ol>
+                </div>
+                
+                <hr>
+                Player: <span id="player-score">0</span>&nbsp;
+                Computer: <span id="computer-score">0</span>
+
+
+                <div class="text-center" style="padding-top: 20px;">
+                    <button class="btn form-control" onclick="window.location.reload(true)">Reset Scores</button>
+                </div>
+            </div>
+
+        </div>
+            
+
+    </div>
+    
+    
+    
+</body>
+<script src="js/bootstrap.bundle.js"></script>
+<script src="main.js"></script>
+</html>
